@@ -1,0 +1,421 @@
+\documentclass[addpoints,11pt]{exam}
+\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color,graphicx}
+\usepackage{multicol}
+\usepackage{MnSymbol}
+
+
+
+\definecolor{codegreen}{rgb}{0,0,0}
+\definecolor{codegray}{rgb}{0,0,0}
+\definecolor{codepurple}{rgb}{0,0,0}
+\definecolor{backcolour}{rgb}{1,1,1}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{black},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\pagestyle{empty}
+ 
+\begin{document}
+ \boxedpoints
+ \pointname{~punti}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering
+Prova scritta Didattica - Programmazione Procedurale - 17 Novembre 2020 }}}
+\end{center}
+ 
+\vspace{5mm}
+ 
+\noindent\makebox[\textwidth]{Nome e Cognome: \rule{8cm}{.1pt} \hspace{1cm} Matricola:  \rule{5cm}{.1pt}}
+
+%\vspace{5mm}
+%\makebox[\textwidth]{Matricola:\enspace\hrulefill}
+ 
+
+\begin{questions} 
+
+\question[1] Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+	\begin{lstlisting}[language=C]
+int main()
+{
+    int a,b,c,somma;
+    a = 2;
+    b = a++;
+    c = ++a;
+    somma = a+b+c;
+    return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+	\makeemptybox{100pt}
+\end{minipage}
+
+
+
+\question[2]
+Trova l'errore e correggi il programma.
+
+\begin{minipage}[t]{0.60\linewidth}
+	
+		\begin{lstlisting}[language=C]
+int main(){
+    int **mat,righe,colonne,i;
+    righe = colonne = 3;
+    mat=(int**)malloc(sizeof(int *)*righe); 
+    for(i=0;i<colonne;i++){
+        mat[i]=(int*)malloc(sizeof(int)*colonne); 
+    }
+    //... programma...
+    free(mat);  
+    return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+	\makeemptybox{160pt}
+\end{minipage}
+
+
+
+
+
+
+\question[2] Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.5\linewidth}
+	\begin{lstlisting}[language=C]
+int main(){
+    for (int i=0; i<5; i++) {
+        printf(" %d \n", i);}    
+    printf("\n\n");    
+    for (int j=1; j<=5; ++j){
+        printf(" %d \n", j);}    
+    return 0;}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.5\linewidth}
+	\makeemptybox{120pt}
+\end{minipage}
+
+
+\question[2] Qual è il valore delle variabili "c" e "d"?
+
+\begin{minipage}[t]{0.4\linewidth}
+	\begin{lstlisting}[language=C]
+int main(){
+    int a[5] = {1,2,3,4,5};
+    int c, d, *b;
+    b = &a[2];
+    c = *b +1;  
+    d = *(b+1);  
+    return 0;}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+	\makeemptybox{140pt}
+\end{minipage}
+
+
+
+\question[3] Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.55\linewidth}
+	\begin{lstlisting}[language=C]
+int main(){
+    int x = 5;
+    int i, j;
+    for (i = 1; i <= x; i++) {
+        for (j = 1; j <= x - i; j++)
+            printf(" ");
+        for (j = 1; j <= i*2 - 1; j++)
+            printf("*");
+    printf("\n");
+  }
+  return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.45\linewidth}
+	\makeemptybox{170pt}
+\end{minipage}
+
+
+
+\question[2] Trova l'errore e correggi il programma.
+
+\begin{minipage}[t]{0.6\linewidth}
+	\begin{lstlisting}[language=C]
+int main(){
+    int **mat,righe,colonne,i;
+    righe = colonne = 3;
+    mat=(int**)malloc(sizeof(int)*righe); 
+    for(i=0;i<colonne;i++){
+        mat[i]=(int*)malloc(sizeof(int)*colonne); 
+         }
+    return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+	\makeemptybox{150pt}
+\end{minipage}
+
+
+
+
+
+
+
+
+\question[1] Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+	\begin{lstlisting}[language=C]
+int main (){
+  int *b, *c, a;
+  a = 2;
+  b = &a;
+  a = 0;
+  *b = *b + 1;
+  c = &a;
+  printf("%d \n", a);      
+  printf("%d \n", *b);     
+  printf("%d \n", *c);     
+  return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+	\makeemptybox{150pt}
+\end{minipage}
+
+
+
+\question[2]
+Cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.4\linewidth}
+	
+		\begin{lstlisting}[language=C]
+int main(){
+    int x = 5;
+    int y = 3;
+    fun(x,y);
+    printf("x : %d \n", x);  
+    printf("y : %d \n", y);  
+    return 0;
+}
+
+void fun(int x, int y){
+    x++;
+    ++y;
+    y = y + x++;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.6\linewidth}
+	\makeemptybox{160pt}
+\end{minipage}
+
+
+
+
+
+
+\question[2] Qual è il valore della variabile "somma".
+
+\begin{minipage}[t]{0.6\linewidth}
+	\begin{lstlisting}[language=C]
+int main()
+{
+    enum mesi { gen, feb, mar, apr, mag = 7, giu, lug, ago, set, ott, nov, dic };
+    int somma = feb + lug + ott;
+    printf("somma = %d \n", somma); 
+    return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+	\makeemptybox{170pt}
+\end{minipage}
+
+
+\question[2] Trova l'errore e correggi.
+
+\begin{minipage}[t]{0.6\linewidth}
+	\begin{lstlisting}[language=C]
+#include <stdio.h>
+#include <stdlib.h>
+struct lista {
+    int val;
+    struct lista * successivo;
+};
+int main(){
+  struct lista * a = malloc(sizeof(struct lista));
+  a->val = 5;
+  a->successivo->val = 3;
+  int somma = a->val + a->successivo->val;
+  printf("%d \n ", somma);
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+	\makeemptybox{170pt}
+\end{minipage}
+
+
+
+\question[3] Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.55\linewidth}
+	\begin{lstlisting}[language=C]
+int main()
+{
+    int a[5]= {1,2,3,4};
+    for(int i=0; i<=a[i]; i++){
+        printf("numero %d\n", i);
+        if(i != 0)
+        i= i+a[i-1];
+        if(i==3)
+        continue;
+    }
+    return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.45\linewidth}
+	\makeemptybox{170pt}
+\end{minipage}
+
+
+
+\question[3] Scrivere cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.5\linewidth}
+	\begin{lstlisting}[language=C]
+int main()
+{
+   int a= 5;
+   short int b=2;
+   float c = 3.2;
+   double d= 4.7;
+   int e = (char) a+b+c+d;   
+   printf("%d\n", e);
+    return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.5\linewidth}
+	\makeemptybox{140pt}
+\end{minipage}
+
+
+
+
+\question[2] Cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.55\linewidth}
+	\begin{lstlisting}[language=C]
+int main()
+{
+    int a[5]= {6,1,1,6,1};
+    for(int i=0; i<=a[i]; i++){
+        if(i>a[i])
+         continue;
+        printf("numero %d\n", i);
+    }
+    return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.45\linewidth}
+	\makeemptybox{150pt}
+\end{minipage}
+
+
+
+\question[2] Quanto vale la variabile "a" alla fine del programma?
+
+\begin{minipage}[t]{0.6\linewidth}
+	\begin{lstlisting}[language=C]
+int main()
+{
+   int a= (0 && 1 || 2 && sizeof(int)? 0 : 5);
+   printf("%d", a);
+    return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+	\makeemptybox{120pt}
+\end{minipage}
+
+
+
+\question[2] Cosa stampa il seguente programma.
+
+\begin{minipage}[t]{0.5\linewidth}
+	\begin{lstlisting}[language=C]
+//ULLONG_MAX = 8446744073709551615
+int main()
+{
+    short x = ULLONG_MAX;
+    char y= 7.50;
+    int c = x+y;
+    printf("%d", c);
+    return 0;
+}
+\end{lstlisting}
+\end{minipage}
+\begin{minipage}[t]{0.5\linewidth}
+	\makeemptybox{140pt}
+\end{minipage}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{questions}
+
+\end{document}
