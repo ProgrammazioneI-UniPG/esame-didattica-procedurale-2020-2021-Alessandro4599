@@ -1,0 +1,67 @@
+SOLUZIONI:
+ESERCIZIO 1 
+4,2,4,10
+
+ESERCIZIO 2 - TROVA L'ERRORE E CORREGGI
+prima devo liberare tutti i mat[i]:
+ for( i=0, i<colonne, i++){
+	free(mat[i]);
+ }
+
+ESERCIZIO 3
+0,1,2,3,4
+1,2,3,4,5
+
+ESERCIZIO 4
+4,4
+
+
+ESERCIZIO 5 
+
+    *    
+   ***   
+  *****  
+ ******* 
+*********
+
+
+
+
+ESERCIZIO 6 
+
+errata allocazione di un array di array:
+mat=(int**)malloc(sizeof(int *)*righe); 
+
+
+ESERCIZIO 7
+1,1,1
+
+
+ESERCIZIO 8
+x=5, y=3
+
+ESERCIZIO 9
+22
+
+ESERCIZIO 10
+errore nel successivo->val di riga 10 poichè a->successivo non è allocato.
+bisogna inserire la seguente riga di codice
+a->successivo = malloc(sizeof(struct lista));
+
+ESERCIZIO 11
+ 0 1 3
+
+
+ESERCIZIO 12
+14
+
+
+ESERCIZIO 13
+ 0 1
+
+
+ESERCIZIO 14
+ 0
+
+ESERCIZIO 15
+6
